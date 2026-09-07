@@ -247,10 +247,11 @@ feel the same would be worse than two that mean different things.
   would itself be an abuse vector.
 - **Reporter's key is stored**, so one person cannot report the same piece
   fifty times.
-- **Auto-hide on threshold.** N distinct reports auto-unlists a model pending
-  review. This is the highest-value piece of the whole moderation design: it
-  drops the damage window from "until steve next looks" to minutes, and costs
-  almost nothing.
+- **Auto-hide on threshold.** **3 distinct reporter keys** auto-unlists a model
+  pending review. This is the highest-value piece of the whole moderation
+  design: it drops the damage window from "until steve next looks" to minutes,
+  and costs almost nothing. The threshold is a config value, not a constant, so
+  it can be raised if the gallery grows enough for 3 to be trivially gamed.
 - **Pull-based delivery, zero egress.** Reports sit in SQLite. Nothing is sent
   anywhere. They are fetched either via `pct enter` and a `tessera-reports`
   CLI, or through the admin endpoint from the app. The server never initiates
