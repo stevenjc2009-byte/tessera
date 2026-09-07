@@ -423,6 +423,24 @@ service does not come back up. Never touch state directories.
 - Commits authored as `final_destiny63 <stevenjc2009@gmail.com>`.
 - Client ships as a **CIA**, so it can declare its own memory mode.
 
+### 8.1 Release requirements
+
+Standing instruction from steve (2026-09-07): **every client release ships a
+per-version QR code**, starting with v1.0.0.
+
+The QR encodes the direct download URL of that version's `.cia` asset on its
+GitHub Release, so it can be scanned straight into FBI on the console. It is
+per-version, not a single evergreen code — the same pattern as the existing
+`push-new-branch` and `push-verdant-pass` release skills.
+
+Blocked until there is a v1.0.0 CIA to point at, i.e. after phase 1 at the
+earliest and realistically at first release.
+
+Two known traps from prior releases, to check at release time rather than
+discover: a `gh release` asset's `file#label` is **not** the filename — assets
+upload under their on-disk name — and GitHub 404s are negatively cached, so a
+URL tested too early can keep reading as missing after the asset lands.
+
 ---
 
 ## 9. Phasing
