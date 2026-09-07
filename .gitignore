@@ -1,0 +1,26 @@
+# Vendored dependencies (their own repos)
+deps/
+
+# devkitPro build output
+build/
+build-*/
+*.3dsx
+*.smdh
+*.elf
+*.cia
+*.bnr
+*.icn
+*.nds
+output/
+
+# Host-side test builds
+*.o
+*.d
+*.exe
+*.out
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
